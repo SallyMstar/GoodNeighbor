@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react'
 
 
-export class MapMaker extends Component {
+class MapMaker extends Component {
   render() {
     return (
       <Map google={this.props.google} 
@@ -12,8 +12,8 @@ export class MapMaker extends Component {
       			lng: -84.496593
       		}}
       		style={{
-      			height: '600px',
-      			width: '57%',
+      			height: '85%',
+      			width: '100%'
        		}}
       		>
  
