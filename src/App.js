@@ -12,19 +12,18 @@ class App extends Component {
 	componentDidMount() {
 		const urlShelter = 'http://api.petfinder.com/shelter.get?key=1edf8545fafb2f223f05f30911af67fa&id=OH1144&output=basic&format=json';
 		const urlPets = 'http://api.petfinder.com/pet.find?key=1edf8545fafb2f223f05f30911af67fa&location=45150&output=basic&format=json';
+		const urlLocations = 'http://api.petfinder.com/shelter.find?key=1edf8545fafb2f223f05f30911af67fa&location=45243&output=basic&format=json';
 
 		axios.get(urlPets)  // get array of pets in the Cincinnati area
 			.then(res => {
-				console.log(res)
 				this.setState({
 					pets: res.data.petfinder.pets.pet
 				})
 			})
-		axios.get(urlShelter)
+		axios.get(urlLocations)
 			.then(res => {
-				console.log(res)
 				this.setState({
-					shelter: res.data.petfinder.shelter
+					shelter: res.data.petfinder.shelters.shelter
 				})
 			})
 			}
@@ -39,7 +38,7 @@ class App extends Component {
 <div id = "root">
 	<div id = "header">
 		<h1>
-			Cincinnati Furry Friends
+			Furry Friend Finder
 		</h1>
 		<span className = "section1">
   			<form>
@@ -58,7 +57,7 @@ class App extends Component {
 	</div>
 		<div id = "container">
 		<div id = "map">
-				<MapMaker />
+				<MapMaker shelters={this.state.shelter} />
 		</div>
 		<div className = "section3">
 		{pets.map((pet) =>
@@ -70,6 +69,9 @@ class App extends Component {
                 	<p>no image available</p>
                 	)
                 	}
+                <div>
+                {pet.shelterId.$t}
+                </div>
 				</span>
 
 			)}

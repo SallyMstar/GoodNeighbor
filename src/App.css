@@ -69,6 +69,7 @@ h1 {
   grid-column: span 12;
   grid-row: span 3;
   text-align: center;
+  margin-top: 5px;
 }
 
 .section3 img {
