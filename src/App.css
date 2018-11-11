@@ -7,8 +7,9 @@ body {
                           "container"
                           "footer";
     grid-template-columns: 1fr;
-    background-color: #000;
+    grid-template-rows: auto;
     max-width: 100%;
+    background-color: black;
 }
 
 /* Header Elements */
@@ -29,7 +30,6 @@ h1 {
   margin-left: 20px;
   vertical-align: center;
   color: navy;
-  text-shadow: 1px 1px 2px pink;
 }
 
 #container {
@@ -42,11 +42,29 @@ h1 {
 }
 
 #map {
-  grid-column: 1/13;
+  margin: -23px 5px 5px 5px;
   grid-row: 2/8;
-  margin-top: -25px;
+  grid-column: 1/10;
+}
+
+#menu {
+  grid-column: 10/12;
   display: block;
-  text-align: center;
+  text-align: right;
+  margin-top: -80px;
+  margin-right: 15px;
+}
+
+#menu h2 {
+  margin: 3px;
+  padding: 3px;
+  color: navy;
+  text-align: right;
+}
+
+#menu option {
+  padding: 3px;
+  font-size: 16px;
 }
 
 .section1 {
@@ -63,6 +81,12 @@ h1 {
 }
 
 .section2 {
+  grid-column: 9/13;
+  grid-row: 2/8;
+  display: block;
+  margin: -23px 5px 28px 5px;
+  background-color: #eeeeef;
+  padding: 5px;
 }
 
 .section3 {
@@ -70,12 +94,12 @@ h1 {
   grid-row: span 3;
   text-align: center;
   margin-top: 5px;
+  max-width: 100%;
 }
 
 .section3 img {
-  max-height: 200px;
-  max-width: 200px;
-  margin: auto;
+  max-height: 60%;
+  max-width: 80%;
   box-shadow: -5px 5px 5px;
 }
 
@@ -90,7 +114,6 @@ h1 {
 
 .item {
   background-color: bisque;
-  border-top: 1px solid black;
   padding: 5px;
   margin: 3px;
   grid-row: span 4;
