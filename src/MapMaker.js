@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react'
-import ShelterSelect from './ShelterSelect';
 
 
 
@@ -18,7 +17,7 @@ class MapMaker extends Component {
 
     this.onMarkerSelect = this.onMarkerSelect.bind(this);
   }
-  
+
   onMarkerSelect = (props, marker, e) => {
     this.setState({
       selectedPlace: props,
@@ -31,7 +30,6 @@ class MapMaker extends Component {
 
 
   render() {
-	console.log(this.state)
 	let shelters = this.props.shelters
       	{shelters.map((shelter) => {
       		let name = shelter.name.$t;
@@ -52,13 +50,12 @@ class MapMaker extends Component {
       		shelter.zipcode = zipcode
       		})}
 
-      	console.log(shelters)
     return (
       <Map google={this.props.google} 
-      		zoom={10}
+      		zoom={11}
       		initialCenter={{
-      			lat: 39.14506,
-      			lng: -84.374384
+      			lat: 39.185393,
+      			lng: -84.274159
       		}}
       		style={{
       			height: '85%',
@@ -76,7 +73,6 @@ class MapMaker extends Component {
  				cityName={shelter.city.$t}
  				stateName={shelter.state.$t}
  				zipCode={shelter.zip.$t}
- 				animation= {this.props.google.maps.Animation.DROP}
  				onClick = { this.onMarkerSelect }
  				/>
       			)}
@@ -90,7 +86,9 @@ class MapMaker extends Component {
 		          		{ this.state.activeMarker.cityName }, { this.state.activeMarker.stateName } { this.state.activeMarker.zipCode }</p>
 		          	</div>	          		
         		</ InfoWindow>
-      </Map>
+      	</Map>
+
+
     )
   }
 }

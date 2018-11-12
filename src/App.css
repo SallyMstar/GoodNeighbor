@@ -41,30 +41,28 @@ h1 {
   max-width: 100%;
 }
 
-#map {
-  margin: -23px 5px 5px 5px;
-  grid-row: 2/8;
-  grid-column: 1/10;
-}
-
 #menu {
-  grid-column: 10/12;
   display: block;
   text-align: right;
-  margin-top: -80px;
-  margin-right: 15px;
+  margin: -10px 5px auto auto;
+  z-index: 3;
 }
 
 #menu h2 {
   margin: 3px;
   padding: 3px;
   color: navy;
-  text-align: right;
 }
 
 #menu option {
   padding: 3px;
   font-size: 16px;
+}
+
+#map {
+  margin: -23px 5px 5px 5px;
+  grid-row: 2/8;
+  grid-column: 1/10;
 }
 
 .section1 {
@@ -85,9 +83,37 @@ h1 {
   grid-row: 2/8;
   display: block;
   margin: -23px 5px 28px 5px;
-  background-color: #eeeeef;
-  padding: 5px;
+  text-align: center;
+  overflow-y: scroll;
+  z-index: 1;
 }
+
+.section2 img {
+  max-height: 60%;
+  max-width: 80%;
+  border: 1px solid;
+  box-shadow: -5px 5px 5px;
+}
+
+.item {
+  padding: 5px 5px 10px 5px;
+  margin: 0px;
+  grid-row: span 2;
+  display: inline-block;
+  vertical-align: top;
+  background-color: #cccccf;
+  width: 90%;
+  border: 1px solid black;
+}
+
+.petName {
+  font-size: 18px;
+  font-weight: bold;
+  vertical-align: top;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  }
 
 .section3 {
   grid-column: span 12;
@@ -97,31 +123,6 @@ h1 {
   max-width: 100%;
 }
 
-.section3 img {
-  max-height: 60%;
-  max-width: 80%;
-  box-shadow: -5px 5px 5px;
-}
-
-.petName {
-  font-size: 22px;
-  font-weight: bold;
-  vertical-align: top;
-  width: 100%;
-  padding-top: 5px;
-  padding-bottom: 10px;
-  }
-
-.item {
-  background-color: bisque;
-  padding: 5px;
-  margin: 3px;
-  grid-row: span 4;
-  display: inline-block;
-  vertical-align: top;
-  height: 100%;
-  width: 20%;
-}
 
 #footer {
   grid-area: "footer";
