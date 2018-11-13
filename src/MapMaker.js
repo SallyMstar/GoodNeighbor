@@ -50,6 +50,7 @@ class MapMaker extends Component {
       		shelter.zipcode = zipcode
       		})}
 
+
     return (
       <Map google={this.props.google} 
       		zoom={11}

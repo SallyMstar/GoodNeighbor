@@ -4,27 +4,21 @@ class PetParade extends Component {
 
 	state= {
 		pets: [],
-		filteredPets: [],
-		selectedShelter: ''
+		filteredPets: []
 	}
 
 render() {
-	let pets = this.props.pets;
-	let selectedShelter = this.props.shelter
-	
-	console.log(pets)
-	console.log(selectedShelter)
-
-
-	let filteredPets = pets.filter((pet)=> {
-			return pet.shelterId.$t === selectedShelter
-	})	
+	let filteredPets = (((this.props.shelterPets)&&(this.props.shelterPets.length > 0)) ? (this.props.shelterPets) : (this.props.pets ))
 
 console.log(filteredPets)
+console.log(this.props.selectedShelter)
 
 	return(
 
 		<div className="section2">
+		{(((!this.props.shelterPets) || (this.props.shelterPets.length === 0) || (this.props.selectedShelter === 'OH209')) ? (<div className='noResults'>No filtered results. Viewing 25 nearby pets</div>):(
+				<div className='noResults'>{this.props.shelterPets.length || "No filtered results. Viewing 25 nearby "} pets</div>
+				))}
 			{filteredPets.map((pet) =>
 					<div key={pet.id.$t} className = "item">
 	                <div className ='petName'>~ {pet.name.$t} ~<br/>{pet.breeds.breed.$t}</div>
@@ -35,9 +29,11 @@ console.log(filteredPets)
 	                	)
 	                	}
 	                <div>
+	                Shelter {pet.shelterId.$t}
 	                </div>
 					</div>
 				)}
+			}
 		</div>
 
 		)
