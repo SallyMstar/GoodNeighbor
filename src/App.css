@@ -60,9 +60,11 @@ h1 {
 }
 
 #map {
-  margin: -23px 5px 5px 5px;
-  grid-row: 2/8;
+  margin: 0px;
+  grid-row: 1/8;
   grid-column: 1/10;
+  height: 100%;
+  
 }
 
 .section1 {
@@ -90,6 +92,7 @@ h1 {
   text-align: center;
   overflow-y: scroll;
   z-index: 1;
+  height: 100%;
 }
 
 .section2 img {

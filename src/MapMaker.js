@@ -55,12 +55,13 @@ class MapMaker extends Component {
       <Map google={this.props.google} 
       		zoom={11}
       		initialCenter={{
-      			lat: 39.185393,
+      			lat: 39.205393,
       			lng: -84.274159
       		}}
       		style={{
-      			height: '85%',
-      			width: '66%'
+      			height: '100%',
+      			width: '66%',
+      			topmargin: '100px'
        		}}
       		>
 
