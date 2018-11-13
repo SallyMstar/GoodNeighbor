@@ -18,18 +18,23 @@ class MapMaker extends Component {
     this.onMarkerSelect = this.onMarkerSelect.bind(this);
   }
 
+
+
   onMarkerSelect = (props, marker, e) => {
     this.setState({
       selectedPlace: props,
       activeMarker: marker,
       showingInfoWindow: true
     });
+    
     console.log(marker)
     console.log(this.state.selectedPlace)
   }
 
 
   render() {
+  	let selected = this.props.selectedShelter
+  	console.log(selected)
 	let shelters = this.props.shelters
       	{shelters.map((shelter) => {
       		let name = shelter.name.$t;

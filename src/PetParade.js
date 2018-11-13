@@ -16,7 +16,7 @@ console.log(this.props.selectedShelter)
 	return(
 
 		<div className="section2">
-		{(((!this.props.shelterPets) || (this.props.shelterPets.length === 0) || (this.props.selectedShelter === 'OH209')) ? (<div className='noResults'>No filtered results.<br />Viewing 25 nearby pets</div>):(
+		{(((!this.props.shelterPets) || (this.props.shelterPets.length === 0) || (this.props.selectedShelter === 'OH209')) ? (<div className='noResults'>No shelter selected or no matching results.<br />Viewing 25 nearby pets</div>):(
 				<div className='noResults'>{this.props.shelterPets.length || "No filtered results. Viewing nearby "} pets (max 25)</div>
 				))}
 			{filteredPets.map((pet) =>
