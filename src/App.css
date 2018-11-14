@@ -4,8 +4,7 @@ title {
 body {
     display: grid;
     grid-template-areas: "header"
-                          "container"
-                          "footer";
+                          "container";
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     max-width: 100%;
@@ -25,10 +24,17 @@ body {
      z-index: 2;
 }
 
+legend {
+  visibility: hidden;
+}
+
+#header h1 {
+  margin-top: 5px;
+}
+
 h1 {
   font-style: italic;
   margin-left: 20px;
-  vertical-align: center;
   color: navy;
 }
 
@@ -44,7 +50,7 @@ h1 {
 #menu {
   display: block;
   text-align: right;
-  margin: -10px 5px auto auto;
+  margin: -5px 5px auto auto;
   z-index: 3;
 }
 
@@ -56,14 +62,14 @@ h1 {
 
 #menu option {
   padding: 3px;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 #map {
   margin: 0px;
-  grid-row: 1/8;
+  grid-row: 1/6;
   grid-column: 1/10;
-  height: 100%;
+  margin-top: 80px;
   
 }
 
@@ -124,10 +130,12 @@ h1 {
   }
 
 .section3 {
+  background-color: #eeeeef;
   grid-column: span 12;
-  grid-row: span 3;
+  grid-row: span 1;
   text-align: center;
-  margin-top: 5px;
+  margin-top: -15px;
+  margin-bottom: 0px;
   max-width: 100%;
 }
 

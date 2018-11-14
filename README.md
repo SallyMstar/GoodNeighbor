@@ -1,3 +1,19 @@
+# ** The CORS browser plugin is required to view this app on a local server **
+### Please refer to the links below to enable the plugin for your browser:
+
+* Firefox: <a href='https://addons.mozilla.org/en-US/firefox/addon/cors-everywhere/'>CORS Everywhere – Get this Extension for  Firefox (en-US)</a>
+
+* Chrome: <a href='https://chrome.google.com/webstore/detail/cors/dboaklophljenpcjkbbibpkbpbobnbld?hl=en'>CORS - Chrome Web Store - Google Chrome</a>
+
+* Safari: To enable cross-origin access go to Tools->Internet Options->Security tab, click on “Custom Level” button. Find the Miscellaneous -> Access data sources across domains setting and select “Enable” option.
+
+* Internet Explorer: To enable cross-origin access go to Tools->Internet Options->Security tab, click on “Custom Level” button. Find the Miscellaneous -> Access data sources across domains setting and select “Enable” option.
+
+
+
+
+<nr>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react'
 
 
@@ -11,25 +12,36 @@ class MapMaker extends Component {
     this.state = {
       showingInfoWindow: false,
       activeMarker: {},
-      selectedPlace: {},
-      shelterData: []
+      selectedShelter: [],
+      shelterData: [],
+      shelterPets: []
     }
 
     this.onMarkerSelect = this.onMarkerSelect.bind(this);
   }
 
+getShelterPets(selectedShelter) {
 
+	let urlShelter = 'http://api.petfinder.com/shelter.getPets?key=1edf8545fafb2f223f05f30911af67fa&output=basic&format=json&id='+selectedShelter;
+  // get array of pets in the selected shelter
+  axios.get(urlShelter)
+    .then(res => {
+        this.setState({shelterPets: res.data.petfinder.pets.pet})
+      	this.setState({selectedShelter: selectedShelter})
+    console.log(this.state.shelterPets)
+		})
+	}
 
-  onMarkerSelect = (props, marker, e) => {
+onMarkerSelect = (props, marker, e) => {
     this.setState({
-      selectedPlace: props,
+      selectedShelter: props.name,
       activeMarker: marker,
       showingInfoWindow: true
     });
-    
-    console.log(marker)
-    console.log(this.state.selectedPlace)
-  }
+    this.getShelterPets(this.state.selectedShelter)
+    console.log(this.state.activeMarker)
+    console.log(this.state.selectedShelter)
+  	}
 
 
   render() {
@@ -58,13 +70,13 @@ class MapMaker extends Component {
 
     return (
       <Map google={this.props.google} 
-      		zoom={11}
+      		zoom={10}
       		initialCenter={{
-      			lat: 39.205393,
+      			lat: 39.155393,
       			lng: -84.274159
       		}}
       		style={{
-      			height: '100%',
+      			height: '85%',
       			width: '66%',
       			topmargin: '100px'
        		}}
@@ -81,8 +93,12 @@ class MapMaker extends Component {
  				stateName={shelter.state.$t}
  				zipCode={shelter.zip.$t}
  				onClick = { this.onMarkerSelect }
+ 				animation={(this.state.activeMarker)
+ 							&&(this.state.selectedShelter === shelter.key)
+ 							&&(this.props.google.maps.Animation.BOUNCE)}
  				/>
       			)}
+
       	  <InfoWindow
 	          	marker = { this.state.activeMarker }
 	          	visible = { this.state.showingInfoWindow }
@@ -91,10 +107,11 @@ class MapMaker extends Component {
 		          		<h3>{ this.state.activeMarker.title }</h3>
 		          		<p>{ this.state.activeMarker.address }<br />
 		          		{ this.state.activeMarker.cityName }, { this.state.activeMarker.stateName } { this.state.activeMarker.zipCode }</p>
-		          	</div>	          		
+		          	</div>	 
+                 Select this shelter from the menu to view our pets         		
         		</ InfoWindow>
       	</Map>
-
+      	
 
     )
   }

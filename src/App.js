@@ -5,6 +5,7 @@ import MapMaker from './MapMaker';
 import PetParade from './PetParade';
 import './App.css';
 
+
 class App extends Component {
 
   constructor(props) {
@@ -14,7 +15,7 @@ class App extends Component {
 		pets: [],
 		shelter: [],
 		shelterPets: [],
-		selectedShelter: 'all'
+		selectedShelter: ''
 	};
 
 	this.onShelterSelect = this.onShelterSelect.bind(this);
@@ -41,6 +42,20 @@ class App extends Component {
 				console.log(this.state.shelter)
 			})
 		}
+getShelterPets(selectedShelter) {
+
+	let urlShelter = 'http://api.petfinder.com/shelter.getPets?key=1edf8545fafb2f223f05f30911af67fa&output=basic&format=json&id='+selectedShelter;
+	this.setState({selectedShelter: selectedShelter})
+	// get array of pets in the selected shelter
+	axios.get(urlShelter)
+		.then(res => {
+				let shelterPets = res.data.petfinder.pets.pet
+			this.setState({
+				shelterPets: shelterPets
+			})
+		console.log(shelterPets)
+		})
+	}
 
 onShelterSelect(event) {
 	let selectedShelter = event.target.value
@@ -48,22 +63,13 @@ onShelterSelect(event) {
 	if(selectedShelter == 'all') {
 		this.setState({
 			selectedShelter: 'all',
-			shelterPets: []
+			shelterPets: [],
 		})
 		return
 		}
-
-	let urlShelter = 'http://api.petfinder.com/shelter.getPets?key=1edf8545fafb2f223f05f30911af67fa&output=basic&format=json&id='+selectedShelter;
-	this.setState({selectedShelter: selectedShelter})
-	// get array of pets in the selected shelter
-	axios.get(urlShelter)
-		.then(res => {
-			this.setState({
-				shelterPets: res.data.petfinder.pets.pet
-			})
-		console.log(this.state.shelterPets)
-		})
+		this.getShelterPets(selectedShelter)
 	}
+
 
 
  render() {
@@ -76,15 +82,17 @@ onShelterSelect(event) {
 <div id = "root">
 	<div id = "header">
 		<h1>Furry Friend Finder</h1>
-		<span className = "section1">
-			<div id="menu">
+	</div>
+	<div id = "container">
+
+		<div id= 'menu' className = "section1">
 				<legend><h2><em>View adoptable pets</em></h2></legend>
   			<form>
 		            <select 
 		            	id="shelterMenu" 
 		            	value={this.state.selectedShelter} 
 		            	onChange={this.onShelterSelect}>
-		            	<option value='all' >Select a shelter:</option>
+		            	<option value='all' >View any shelter's adoptable pets:</option>
 		            	<option value='all' >View 25 nearby pets from any shelter</ option>
 			         	{shelters.map((shelter, index, key) =>
 		            	<option 
@@ -98,16 +106,18 @@ onShelterSelect(event) {
 		            </select>
 			</form>
 		</div>
-		</span>
 
-	</div>
-
-	<div id = "container">
-
-		<div id = "map">
+		<div id = "map" role='application'>
 			<MapMaker shelters={this.state.shelter} pets={this.state.pets} selectedShelter={this.state.selectedShelter} />
 		</div>
-			<PetParade pets={this.state.pets} shelterPets={this.state.shelterPets} selectedShelter={this.state.selectedShelter} />
+			<PetParade 
+				pets={this.state.pets} 
+				shelterPets={this.state.shelterPets} 
+				selectedShelter={this.state.selectedShelter} 
+				/>
+	</div>
+	<div className='section3'>
+	All pet data was provided by PetFinder API
 	</div>
 </div>
    );
