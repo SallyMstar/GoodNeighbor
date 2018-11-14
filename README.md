@@ -1,10 +1,10 @@
-# goodneighbor:  Be a good neighbor, and adopt a pet!
+## goodneighbor:  Be a good neighbor, and adopt a pet!
 
 This project was created as an example of a REACT app with multiple API integrations.
 * The map data was imported using the GoogleMaps API.
 * The pet and animal shelter data was imported using the PetFinder API.
 
-## To get started, please complete the following steps:
+### To get started, please complete the following steps:
 
  1. `git clone` or download the GitHub repo <a href='https://github.com/SallyMstar/goodneighbor.git'>goodneighbor (https://github.com/SallyMstar/goodneighbor.git)</a> 
  2. As noted below, enable CORS in your browser.  *You will get no data if you don't complete this step.*
@@ -13,8 +13,8 @@ This project was created as an example of a REACT app with multiple API integrat
  4. Once the development server is running, navigate to `localhost:3000` in a browser window.
 
 
-### ** Please Note: The CORS browser plugin is required to view this app on a local server
-#### Please refer to the links below to enable the plugin for your browser:
+#### ** Please Note: The CORS browser plugin is required to view this app on a local server.
+#### 		Follow the instructions below to enable the plugin for your browser:
 
 * Firefox: <a href='https://addons.mozilla.org/en-US/firefox/addon/cors-everywhere/' target='blank'>CORS Everywhere – Get this Extension for  Firefox (en-US)</a>
 
@@ -35,7 +35,7 @@ This project was created as an example of a REACT app with multiple API integrat
  	* navigate to `localhost:5000`
 
 
-### Many thanks to the makers of Axios for the API integration options for REACT 
+#### Many thanks to the makers of Axios for the API integration options for REACT 
 
 
 ### ============= The following data was provided by Create React App =============
