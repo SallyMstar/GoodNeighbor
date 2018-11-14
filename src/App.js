@@ -117,7 +117,7 @@ onShelterSelect(event) {
 				/>
 	</div>
 	<div className='section3'>
-	All pet data was provided by PetFinder API
+	All pet data was provided by PetFinder API / <a href="https://pngtree.com/free-icon/paws_626868">Paw Print Icon</a> from pngtree.com
 	</div>
 </div>
    );
