@@ -1,19 +1,44 @@
-### ** The CORS browser plugin is required to view this app on a local server **
+# GoodNeighbor:  Be a good neighbor, and adopt a pet!
+
+This project was created as an example of a REACT app with multiple API integrations.
+* The map data was imported using the GoogleMaps API.
+* The pet and animal shelter data was imported using the PetFinder API.
+
+## To get started, please complete the following steps:
+
+ 1. `clone` or download the GitHub repo <a href='https://github.com/SallyMstar/goodneighbor.git' target='blank'>goodneighbor</a>
+ 2. As noted below, enable CORS in your browser.  *You will get no data if you don't complete this step.*
+ 2. In a terminal window, navigate to the project directory on your computer.
+ 3. Type `npm start` to start the development server.  This may take a few moments to complete.
+ 4. Once the development server is running, navigate to `localhost:3000` in a browswer window.
+
+
+### ** Please Note: The CORS browser plugin is required to view this app on a local server
 #### Please refer to the links below to enable the plugin for your browser:
 
-* Firefox: <a href='https://addons.mozilla.org/en-US/firefox/addon/cors-everywhere/'>CORS Everywhere – Get this Extension for  Firefox (en-US)</a>
+* Firefox: <a href='https://addons.mozilla.org/en-US/firefox/addon/cors-everywhere/' target='blank'>CORS Everywhere – Get this Extension for  Firefox (en-US)</a>
 
-* Chrome: <a href='https://chrome.google.com/webstore/detail/cors/dboaklophljenpcjkbbibpkbpbobnbld?hl=en'>CORS - Chrome Web Store - Google Chrome</a>
+* Chrome: <a href='https://chrome.google.com/webstore/detail/cors/dboaklophljenpcjkbbibpkbpbobnbld?hl=en' target='blank'>CORS - Chrome Web Store - Google Chrome</a>
 
 * Safari: Later versions of Safari allow you to Disable Cross-Origin Restrictions. Just enable the developer menu from Preferences >> Advanced, and select "Disable Cross-Origin Restrictions" from the develop menu.
 
 * Internet Explorer: To enable cross-origin access go to Tools->Internet Options->Security tab, click on “Custom Level” button. Find the Miscellaneous -> Access data sources across domains setting and select “Enable” option.
 
 
+### Service Worker
+*Although the serviceWorker is registered and activated, it will not work in development mode. To run the app in production mode, please complete the following steps:*
+
+ 1. From your project directory in a terminal window,
+	* `npm run build`
+	* `server -s build`
+ 2. In your browser with the CORS plugin as noted above,
+ 	* navigate to `localhost:5000`
 
 
+### ============= Many thanks to the makers of Axios for the API integration options for REACT =============
 
-<nr>
+
+### ============= The following data was provided by Create React App =============
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
