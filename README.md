@@ -5,9 +5,10 @@
 
 * Chrome: <a href='https://chrome.google.com/webstore/detail/cors/dboaklophljenpcjkbbibpkbpbobnbld?hl=en'>CORS - Chrome Web Store - Google Chrome</a>
 
-* Safari: To enable cross-origin access go to Tools->Internet Options->Security tab, click on “Custom Level” button. Find the Miscellaneous -> Access data sources across domains setting and select “Enable” option.
+* Safari: Later versions of Safari allow you to Disable Cross-Origin Restrictions. Just enable the developer menu from Preferences >> Advanced, and select "Disable Cross-Origin Restrictions" from the develop menu.
 
 * Internet Explorer: To enable cross-origin access go to Tools->Internet Options->Security tab, click on “Custom Level” button. Find the Miscellaneous -> Access data sources across domains setting and select “Enable” option.
+
 
 
 
