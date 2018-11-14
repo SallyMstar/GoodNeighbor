@@ -1,4 +1,4 @@
-###** The CORS browser plugin is required to view this app on a local server **
+### ** The CORS browser plugin is required to view this app on a local server **
 #### Please refer to the links below to enable the plugin for your browser:
 
 * Firefox: <a href='https://addons.mozilla.org/en-US/firefox/addon/cors-everywhere/'>CORS Everywhere – Get this Extension for  Firefox (en-US)</a>
